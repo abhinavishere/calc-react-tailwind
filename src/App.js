@@ -1,23 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import CalcKeys from "./components/CalcKeys";
+import CalcScreen from "./components/CalcScreen";
+import StatusBar from "./components/StatusBar";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="max-w-sm w-full h-screen mx-auto bg-gray-50 flex flex-col gap-y-2 justify-between">
+      <StatusBar />
+      <CalcScreen />
+      <CalcKeys />
     </div>
   );
 }
