@@ -6,7 +6,16 @@ const CalcKey = (props) => {
     console.log(keyRef.current.value);
   };
 
-  const btnTypeClass = `btn-${props.category}`;
+  let btnTypeClass = "";
+  if (props.category === "input") {
+    btnTypeClass = "bg-gray-200 hover:bg-gray-300 focus:bg-gray-300";
+  } else if (props.category === "cancel") {
+    btnTypeClass = "bg-yellow-100 hover:bg-yellow-200 focus:bg-yellow-200";
+  } else if (props.category === "operation") {
+    btnTypeClass = "bg-red-500 hover:bg-red-600 focus:bg-red-600";
+  } else if (props.category === "result") {
+    btnTypeClass = "bg-green-500 hover:bg-green-600 focus:bg-green-600";
+  }
   return (
     <button
       className={`${btnTypeClass} text-3xl  w-full rounded-xl ${
